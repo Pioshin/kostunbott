@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Assistenza · Kostunbott</title>
+<meta name="description" content="Help desk Kostunbott: domande frequenti e apertura ticket.">
+<meta name="theme-color" content="#0b0c0e">
+<link rel="icon" href="assets/favicon.png">
+<link rel="stylesheet" href="css/stile.css">
+</head>
+<body data-pagina="assistenza">
+<a class="salta" href="#contenuto">Salta al contenuto</a>
+<header id="testata"></header>
+<div id="ticker"></div>
+<main id="contenuto">
+<div class="contenitore pagina-testo">
+  <p class="mono">Help Desk · Terrax</p>
+  <h1>Assistenza</h1>
+  <p>Il nostro help desk è gestito da tecnici esperti, abituati a risolvere qualsiasi problema al terzo tentativo. Prima di aprire un ticket, consultate le domande frequenti.</p>
+
+  <section class="faq" aria-labelledby="t-faq">
+    <h2 id="t-faq">Domande frequenti</h2>
+    <details><summary>Ho perso un oggetto in una tasca. Come lo recupero?</summary><p>Le tasche sono innumerevoli e insondabili. Gli oggetti tornano, ma in ordine non garantito. Consigliamo di cercare con fiducia e senza fretta.</p></details>
+    <details><summary>Il giubbotto si è ridotto a un volume minimo e non torna normale.</summary><p>È il sistema autosottovuotante. La parola chiave di riespansione non viene comunicata per iscritto: chi ha letto il libro sa cosa digitare.</p></details>
+    <details><summary>Il cavetto USB non entra.</summary><p>Giratelo. Non entra ancora? Giratelo di nuovo. Al terzo tentativo la fisica quantistica si arrende.</p></details>
+    <details><summary>Le spalle hanno iniziato a muoversi da sole.</summary><p>È il Protocollo Tergicristallo, attivato dall'umidità. Le spazzole si fermano quando smette di piovere, o quando decidono loro.</p></details>
+    <details><summary>Avete rapporti con la HUAZZAMERICANGIRLS?</summary><p>No. Qualsiasi cosa faccia la HUAZZAMERICANGIRLS, la fa in modo pericoloso e, con ogni probabilità, causando un sacco di ticket all'help desk.</p></details>
+  </section>
+
+  <section class="sezione" aria-labelledby="t-ticket">
+    <h2 id="t-ticket">Apri un ticket</h2>
+    <form id="modulo-ticket" novalidate>
+      <div class="campi">
+        <div><label for="t-argomento">Argomento</label>
+          <select id="t-argomento" required>
+            <option value="">Scegliere…</option>
+            <option>Tasche</option><option>Sottovuoto</option><option>Cavetto USB</option><option>Rifrazione (metà mancante)</option><option>Borseggiatori che si derubano da soli</option>
+          </select></div>
+      </div>
+      <div id="box-descrizione">
+        <label for="t-descrizione">Descrizione del problema</label>
+        <textarea id="t-descrizione" rows="4" required></textarea>
+      </div>
+      <div id="box-espansione" hidden>
+        <label for="t-espansione">Inserire password di espansione</label>
+        <input type="text" id="t-espansione" autocomplete="off" autocapitalize="off" spellcheck="false">
+      </div>
+      <p><button class="btn" type="submit" style="margin-top:14px">Invia il ticket</button></p>
+    </form>
+    <div class="esito avviso" id="esito-ticket" hidden aria-live="polite"></div>
+    <div class="onda-wrap">
+      <canvas class="onda" data-onda></canvas>
+      <small>Linea dell'help desk · in attesa di un operatore</small>
+    </div>
+  </section>
+</div>
+</main>
+<footer id="piede"></footer>
+<script src="js/catalogo.js"></script>
+<script src="js/carrello.js"></script>
+<script src="js/comune.js"></script>
+<script src="js/onda.js"></script>
+<script src="js/segreto.config.js"></script>
+<script src="js/pagine.js"></script>
+</body>
+</html>

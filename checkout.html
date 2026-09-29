@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Checkout · Kostunbott</title>
+<meta name="description" content="Procedura di acquisto Kostunbott.">
+<meta name="theme-color" content="#0b0c0e">
+<link rel="icon" href="assets/favicon.png">
+<link rel="stylesheet" href="css/stile.css">
+</head>
+<body data-pagina="checkout">
+<a class="salta" href="#contenuto">Salta al contenuto</a>
+<header id="testata"></header>
+<div id="ticker"></div>
+<main id="contenuto">
+<div class="contenitore" style="max-width:820px">
+  <h1 class="sezione" style="padding-bottom:0">Checkout</h1>
+  <p class="mono" id="riepilogo"></p>
+
+  <div class="vuoto" id="checkout-vuoto" hidden>
+    <p>Non c'è niente da pagare. Anche questo è un risultato.</p>
+    <a class="btn" href="index.html">Vai alla collezione</a>
+  </div>
+
+  <section class="passo" data-passo="1" hidden aria-labelledby="t-passo1">
+    <p class="mono">Passo 1 di 4</p>
+    <h2 id="t-passo1">Verifica del saldo karmico</h2>
+    <p>karmiPay accetta solo clienti con un saldo di buone azioni sufficiente. Stiamo controllando il vostro.</p>
+    <ul class="registro" id="registro-karma" aria-live="polite"></ul>
+    <button class="btn" type="button" id="avanti-1" disabled>Prosegui</button>
+  </section>
+
+  <section class="passo" data-passo="2" hidden aria-labelledby="t-passo2">
+    <p class="mono">Passo 2 di 4</p>
+    <h2 id="t-passo2">Termini e Condizioni d'Uso (EULA)</h2>
+    <p>Per proseguire è necessario scorrere il Contratto fino in fondo.</p>
+    <div class="eula" id="eula" tabindex="0" role="region" aria-label="Testo del contratto"></div>
+    <p class="pagina-eula" id="pagina-eula" aria-live="off"></p>
+    <label class="check"><input type="checkbox" id="accetto-eula" disabled> Dichiaro di aver letto tutto, come chiunque.</label>
+    <button class="btn" type="button" id="avanti-2" disabled>Accetto e proseguo</button>
+  </section>
+
+  <section class="passo" data-passo="3" hidden aria-labelledby="t-passo3">
+    <p class="mono">Passo 3 di 4</p>
+    <h2 id="t-passo3">Modulo H7-25 per l'acquisto temporaneo</h2>
+    <p>Da compilare insieme al modulo M-41T e al modulo Z-99Z, perché sì. Nulla di quanto scritto viene inviato o conservato.</p>
+    <form id="modulo-h725" novalidate>
+      <div class="campi">
+        <div><label for="f-soprannome">Soprannome galattico</label><input type="text" id="f-soprannome" required autocomplete="off" placeholder="es. no-one"></div>
+        <div><label for="f-pianeta">Pianeta di consegna</label>
+          <select id="f-pianeta" required>
+            <option value="">Scegliere…</option>
+            <option>Terrax</option><option>Aris IV</option><option>Malaffare</option><option>Cygnus-X1</option><option>Non lo so, FALLO!</option>
+          </select></div>
+        <div><label for="f-giorno">Giorno di consegna preferito</label>
+          <select id="f-giorno" required>
+            <option value="">Scegliere…</option>
+            <option>Sabedì</option><option>Domedì</option><option>Giobedì</option><option>Vendolì</option>
+          </select></div>
+        <div><label for="f-disappunto">Grado di disappunto attuale (0-72)</label><input type="text" id="f-disappunto" inputmode="numeric" pattern="[0-9]{1,2}" required autocomplete="off"></div>
+      </div>
+      <button class="btn" type="submit">Timbra il modulo</button>
+    </form>
+  </section>
+
+  <section class="passo" data-passo="4" hidden aria-labelledby="t-passo4">
+    <p class="mono">Passo 4 di 4</p>
+    <h2 id="t-passo4">Pagamento con karmiPay</h2>
+    <p>Il pagamento avviene in crediti karmici, al cambio di ieri.</p>
+    <button class="btn" type="button" id="paga">Paga con karmiPay</button>
+    <ul class="registro" id="registro-paga" aria-live="polite"></ul>
+    <div class="schermata-blu" id="schermata-blu" hidden role="alert">
+      <div class="grande">:(</div>
+      <p>GENTILE UTENTE, IL VOSTRO TENTATIVO DI ACQUISTO È STATO REGISTRATO.<br>SI PREGA DI ATTENDERE IN CODA.</p>
+      <p>SIETE IL NUMERO: INFINITO</p>
+      <p>Codice errore: KARMIPAY_SHAREWARE_LICENSE_EXPIRED<br>Il terminale di pagamento non è registrato. Il carrello è stato conservato. Consegna prevista: ieri.</p>
+      <p><a href="carrello.html" style="color:#fff">Torna al carrello</a> · <a href="assistenza.html" style="color:#fff">Apri un ticket</a></p>
+    </div>
+  </section>
+</div>
+</main>
+<footer id="piede"></footer>
+<script src="js/catalogo.js"></script>
+<script src="js/carrello.js"></script>
+<script src="js/comune.js"></script>
+<script src="js/onda.js"></script>
+<script src="js/segreto.config.js"></script>
+<script src="js/pagine.js"></script>
+</body>
+</html>

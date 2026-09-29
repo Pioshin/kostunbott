@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="Maglietta Nosce te ipsum, baby! (immagine segnaposto)">
+  <path d="M140 70 Q200 104 260 70 L352 118 L324 196 L290 182 L290 440 L110 440 L110 182 L76 196 L48 118 Z" fill="#16191d" stroke="#c08a4d" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M140 70 Q200 118 260 70" fill="none" stroke="#c08a4d" stroke-width="2"/>
+  <text x="200" y="250" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" fill="#e3b581">Nosce te ipsum,</text>
+  <text x="200" y="282" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="27" font-style="italic" fill="#ff2e93">baby!</text>
+  <text x="200" y="488" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" letter-spacing="2" fill="#6b7178">IMMAGINE SEGNAPOSTO</text>
+</svg>
