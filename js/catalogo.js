@@ -9,8 +9,15 @@
     studioRetro: "assets/studio-retro.jpg",
     studioPrimo: "assets/studio-primo-piano.jpg",
     studioProfilo: "assets/studio-profilo.jpg",
-    cavetto: "assets/cavetto.svg",
-    pendolo: "assets/pendolo.svg",
+    mk2: "assets/kostunbott-mk2.jpg",
+    pearArancio: "assets/pearwatch-arancio.jpg",
+    pearGrigio: "assets/pearwatch-grigio.jpg",
+    pearScheda: "assets/pearwatch-scheda.jpg",
+    badge: "assets/badge-omnicorp.jpg",
+    multiutensile: "assets/multiutensile-nexus.jpg",
+    fondina: "assets/fondina-nexus.jpg",
+    cavetto: "assets/cavetto.jpg",
+    pendolo: "assets/pendolo.jpg",
     maglietta: "assets/maglietta.jpg"
   };
 
@@ -46,7 +53,7 @@
       nome: "Kostunbott Mk II Antiborseggio",
       sotto: "Il tessuto diventa rigido come il titanio. Il borseggiatore deruba se stesso.",
       prezzo: 48500,
-      img: "studioPrimo",
+      img: "mk2",
       descrizione:
         "Sensori di prossimità che curvano lo spazio locale: la mano del borseggiatore finisce nella tasca del borseggiatore. " +
         "Collaudato tra i bazar fluttuanti di Malaffare: quarantotto tentativi sventati in cinquanta metri, mentre il cliente ammirava le lanterne.", // 41
@@ -121,6 +128,95 @@
       ]
     },
     {
+      id: "pearwatch",
+      nome: "PEARWatch Wrist Terminal",
+      sotto: "Il terminale da polso di PEAR. Toglie il flag alle prossime tre fermate.",
+      prezzo: 24900,
+      img: "pearArancio",
+      varianti: [
+        { nome: "Arancio segnalazione", img: "pearArancio" },
+        { nome: "Grigio ardesia", img: "pearGrigio" }
+      ],
+      extra: [
+        { img: "pearScheda", alt: "Scheda tecnica del PEARWatch: marchio PEAR, palette colori, tipografia e dettagli del prodotto", didascalia: "Scheda tecnica PEAR · Portable Systems Division" }
+      ],
+      descrizione:
+        "Il compagno di polso di ogni tecnico dell'Help Desk, distribuito da Kostunbott su licenza PEAR. Si collega al sistema di navigazione di una nave da crociera " +
+        "e toglie il flag alle prossime tre fermate, così si va dritti a destinazione senza altre soste.", // 25
+      specifiche: [
+        "Collegamento diretto ai sistemi di navigazione e ai terminali a tubo catodico", // 25, 70
+        "Segnale «Unlock» riconosciuto dai portelli delle navi", // 36
+        "Icona di «Pericolo Imminente» a forma di teschio che sorride in modo inquietante", // 35
+        "Ricezione dati con uno swish del dito", // 46
+        "Lettore musicale con sitar elettronico di serie", // 50
+        "Protetto dai borseggi se indossato con un Kostunbott Mk II" // 41
+      ],
+      recensioni: [
+        { autore: "Ragazzino di 6 anni, Malaffare", stelle: 2, testo: "Ho provato a prenderlo dal polso di un tizio. Il suo giubbotto non era d'accordo." },
+        { autore: "Tecnico, ex azienda di consulenza", stelle: 5, testo: "Se non sai cosa fare, clicca forte su tutto finché non succede qualcosa. Con questo succede prima." }
+      ]
+    },
+    {
+      id: "badge-omnicorp",
+      nome: "Badge aziendale e-ink Omni-Corp",
+      sotto: "Il display che dice come vi sentite prima che lo sappiate voi.",
+      prezzo: 4040,
+      img: "badge",
+      tagliaUnica: true,
+      descrizione:
+        "Da appuntare al taschino con un moto di fierezza. Il display e-ink percepisce la tensione del momento e aggiorna il messaggio " +
+        "con un tempismo invidiabile. In caso di sbarco clandestino, lampeggia in modo rassicurante e minaccioso.", // 30, 31
+      specifiche: [
+        "Messaggi preinstallati: «ERROR 404: COURAGE NOT FOUND», «SYSTEM FAILURE: EVACUATE», «USER BACKGROUND LOADING...»", // 30, 31
+        "Aggiornamento automatico in ambienti di lusso: «ERROR 404: LUXURY NOT FOUND»", // 34
+        "Luce azzurrina per corridoi bui", // 36
+        "Suono di flatulenza elettronica di serie, non disattivabile" // 31
+      ],
+      recensioni: [
+        { autore: "H. Starborne, IT Field Technician", stelle: 4, testo: "Il coraggio non l'ha mai trovato. Però è sempre stato onesto." }
+      ]
+    },
+    {
+      id: "multiutensile-nexus",
+      nome: "Multiutensile Nexus",
+      sotto: "Si aggancia alla cintura. Fa leva su qualunque pannello in vetroresina.",
+      prezzo: 12900,
+      img: "multiutensile",
+      tagliaUnica: true,
+      descrizione:
+        "Lo strumento che ogni tecnico riaggancia alla cintura prima di uno sbarco. Collaudato forzando il pannello di controllo di un loft " +
+        "di lusso con una disinvoltura che farebbe rabbrividire qualsiasi esperto di sicurezza di Aleph.", // 30, 59
+      specifiche: [
+        "Pinze, lame e cacciaviti a scomparsa",
+        "Luce di servizio e sonda con cavo",
+        "Leva certificata per pannelli in vetroresina", // 59
+        "Si ripone nella Fondina compatta Nexus o in una delle innumerevoli tasche"
+      ],
+      recensioni: [
+        { autore: "Custode, Singolarità Penale Omega", stelle: 1, testo: "La porta del loft si è aperta con un sospiro asmatico. Io no." }
+      ]
+    },
+    {
+      id: "fondina-nexus",
+      nome: "Fondina compatta Nexus",
+      sotto: "Cuoio invecchiato e doppio cinturino da coscia, per il multiutensile.",
+      prezzo: 3900,
+      img: "fondina",
+      tagliaUnica: true,
+      descrizione:
+        "Fondina in cuoio su misura per il Multiutensile Nexus. Si porta alla cintura o sulla coscia, come le fondine degli agenti più eleganti della Galassia, " +
+        "ma al posto del revolver al plasma custodisce qualcosa di molto più utile.",
+      specifiche: [
+        "Cuoio invecchiato con cuciture rinforzate",
+        "Doppio cinturino regolabile con fibbie in metallo",
+        "Compatibile con il Multiutensile Nexus",
+        "Non compatibile con camicie hawaiiane (chiedere a un pilota tattico)"
+      ],
+      recensioni: [
+        { autore: "Pilota tattico, Squadra 3G", stelle: 3, testo: "Comoda. Peccato per il fiore di ibisco." }
+      ]
+    },
+    {
       id: "maglietta-nosce",
       nome: "Maglietta «Nosce te ipsum, baby!»",
       sotto: "La citazione della toppa dorsale, su cotone di pianeta non dichiarato.",
@@ -147,6 +243,7 @@
       sotto: "Si inserisce sempre al contrario. Al terzo tentativo, la fisica si arrende.",
       prezzo: 890,
       img: "cavetto",
+      tagliaUnica: true,
       descrizione:
         "Pende dal giubbotto come un intrico di fili che ricorda un nido di uccelli elettrici. Lo si inserisce al contrario, lo si gira, " +
         "è ancora al contrario: al terzo tentativo la fisica quantistica si arrende e il connettore entra.", // 25
@@ -165,6 +262,7 @@
       sotto: "Per assoggettare i robot con la sola forza dell'ipnosi. Forse.",
       prezzo: 1490,
       img: "pendolo",
+      tagliaUnica: true,
       descrizione:
         "Ispirato al metodo del paragnosta Juke Ashkas Hellà, che nella puntata più iconica di Computation Island " +
         "alterò le sorti della partita ipnotizzando il concorrente Andro. Da estrarre dal taschino al momento giusto.", // 68
@@ -196,10 +294,24 @@
     return e;
   }
 
-  function immagine(p) {
+  // Scelta offerta al cliente: colore per i prodotti con varianti, taglia per i capi, nessuna per gli accessori.
+  function scelte(p) {
+    if (p.varianti) return { etichetta: "Colore", opzioni: p.varianti.map(function (v) { return v.nome; }) };
+    if (p.tagliaUnica) return null;
+    return { etichetta: "Taglia", opzioni: TAGLIE };
+  }
+
+  function chiaveImg(p, scelta) {
+    if (p.varianti) {
+      for (var i = 0; i < p.varianti.length; i++) if (p.varianti[i].nome === scelta) return p.varianti[i].img;
+    }
+    return p.img;
+  }
+
+  function immagine(p, scelta) {
     var img = el("img", p.effetto ? "effetto-" + p.effetto : null);
-    img.src = IMG[p.img];
-    img.alt = p.nome;
+    img.src = IMG[chiaveImg(p, scelta)];
+    img.alt = p.nome + (p.varianti && scelta ? " · " + scelta : "");
     return img;
   }
 
@@ -231,5 +343,7 @@
   window.KB.prezzo = prezzo;
   window.KB.el = el;
   window.KB.immagine = immagine;
+  window.KB.scelte = scelte;
+  window.KB.chiaveImg = chiaveImg;
   window.KB.card = card;
 })();

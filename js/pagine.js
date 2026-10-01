@@ -30,6 +30,10 @@
       document.title = "Capo non trovato · Kostunbott";
       var box = el("div", "pagina-testo");
       box.appendChild(el("p", "mono", "ERRORE 404 · MODULO Z-99Z"));
+      var badge404 = el("img", "badge-404");
+      badge404.src = KB.IMG.badge;
+      badge404.alt = "Badge Omni-Corp con l'avviso SYSTEM 404: COURAGE NOT FOUND";
+      box.appendChild(badge404);
       box.appendChild(el("h1", null, "Questo capo si è perso in una tasca"));
       box.appendChild(el("p", null,
         "Il prodotto richiesto è finito in una delle innumerevoli e insondabili tasche del Kostunbott. " +
@@ -45,7 +49,8 @@
     var d = el("div", "dettaglio");
 
     var colImg = el("div", "hero-img");
-    colImg.appendChild(imgProdotto(p));
+    var fotoPrincipale = imgProdotto(p);
+    colImg.appendChild(fotoPrincipale);
     if (p.esaurito) colImg.appendChild(el("span", "tag-esaurito", "Esaurito"));
     d.appendChild(colImg);
 
@@ -75,22 +80,31 @@
       });
       riga.appendChild(attesa);
     } else {
-      var lab = el("label", "sr-only", "Taglia");
-      lab.htmlFor = "taglia";
-      var sel = el("select");
-      sel.id = "taglia";
-      KB.TAGLIE.forEach(function (t) {
-        var o = el("option", null, t);
-        o.value = t;
-        sel.appendChild(o);
-      });
+      var sc = KB.scelte(p);
+      var sel = null;
+      if (sc) {
+        var lab = el("label", "sr-only", sc.etichetta);
+        lab.htmlFor = "scelta";
+        sel = el("select");
+        sel.id = "scelta";
+        sc.opzioni.forEach(function (t) {
+          var o = el("option", null, t);
+          o.value = t;
+          sel.appendChild(o);
+        });
+        if (p.varianti) sel.addEventListener("change", function () {
+          fotoPrincipale.src = KB.IMG[KB.chiaveImg(p, sel.value)];
+          fotoPrincipale.alt = p.nome + " · " + sel.value;
+        });
+        riga.appendChild(lab);
+        riga.appendChild(sel);
+      }
       var agg = el("button", "btn", "Aggiungi al carrello");
       agg.type = "button";
       agg.addEventListener("click", function () {
-        if (KB.carrello.aggiungi(p.id, sel.value)) KB.toast("Aggiunto: " + p.nome + " · " + sel.value);
+        var scelta = sel ? sel.value : "Taglia unica";
+        if (KB.carrello.aggiungi(p.id, scelta)) KB.toast("Aggiunto: " + p.nome + (sel ? " · " + scelta : ""));
       });
-      riga.appendChild(lab);
-      riga.appendChild(sel);
       riga.appendChild(agg);
     }
     info.appendChild(riga);
@@ -113,6 +127,17 @@
 
     d.appendChild(info);
     host.appendChild(d);
+
+    (p.extra || []).forEach(function (x) {
+      var fig = el("figure", "extra-prodotto");
+      var im = el("img");
+      im.src = KB.IMG[x.img];
+      im.alt = x.alt;
+      im.loading = "lazy";
+      fig.appendChild(im);
+      if (x.didascalia) fig.appendChild(el("figcaption", "didascalia", x.didascalia));
+      host.appendChild(fig);
+    });
 
     var rec = el("section", "sezione");
     rec.setAttribute("aria-labelledby", "titolo-recensioni");
@@ -171,7 +196,7 @@
         if (!p) return;
         var tr = el("tr");
         var c0 = el("td");
-        var im = imgProdotto(p);
+        var im = imgProdotto(p, r.taglia);
         im.alt = "";
         c0.appendChild(im);
         tr.appendChild(c0);
@@ -180,7 +205,8 @@
         var link = el("a", null, p.nome);
         link.href = "prodotto.html?id=" + encodeURIComponent(p.id);
         c1.appendChild(link);
-        c1.appendChild(el("div", "mono", "Taglia: " + r.taglia));
+        var sc = KB.scelte(p);
+        c1.appendChild(el("div", "mono", sc ? sc.etichetta + ": " + r.taglia : r.taglia));
         tr.appendChild(c1);
 
         var c2 = el("td");

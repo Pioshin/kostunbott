@@ -239,3 +239,7 @@ footer.piede { background: var(--titanio) url("../assets/circuiti.webp") center 
   .nav a, .carrello-link { font-size: .85rem; }
 }
 section[id] { scroll-margin-top: 96px; }
+.extra-prodotto { margin: 0 0 40px; }
+.extra-prodotto img { width: 100%; border-radius: 14px; border: 1px solid var(--linea); }
+.extra-prodotto .didascalia { margin-top: 10px; }
+.badge-404 { width: min(260px, 70%); border-radius: 14px; margin: 10px 0 24px; }
