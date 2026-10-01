@@ -9,8 +9,9 @@
     studioRetro: "assets/studio-retro.jpg",
     studioPrimo: "assets/studio-primo-piano.jpg",
     studioProfilo: "assets/studio-profilo.jpg",
-    accessorio: "assets/accessorio.svg",
-    maglietta: "assets/maglietta.svg"
+    cavetto: "assets/cavetto.svg",
+    pendolo: "assets/pendolo.svg",
+    maglietta: "assets/maglietta.jpg"
   };
 
   var TAGLIE = ["Umanide S", "Umanide M", "Umanide L", "Spaziale", "Spaziale rotto"];
@@ -130,7 +131,8 @@
         "Per chi non può permettersi un Kostunbott ma vuole comunque conoscere se stesso. KNOW THY SELF, come urlava qualcuno " + // 50
         "a occhi chiusi indicando la propria schiena.",
       specifiche: [
-        "Stampa «Nosce te ipsum, baby!» in bronzo",
+        "Emblema Kostunbott sul petto",
+        "Sulla schiena «Nosce te ipsum, baby!» e il circuito del retro di copertina",
         "Cotone certificato da un ente che nessuno ha mai visto",
         "Lavabile a 36.535 gradi (consigliamo di non verificare)",
         "Non contiene tasche: è un limite, lo sappiamo"
@@ -144,7 +146,7 @@
       nome: "Cavetto USB di servizio",
       sotto: "Si inserisce sempre al contrario. Al terzo tentativo, la fisica si arrende.",
       prezzo: 890,
-      img: "accessorio",
+      img: "cavetto",
       descrizione:
         "Pende dal giubbotto come un intrico di fili che ricorda un nido di uccelli elettrici. Lo si inserisce al contrario, lo si gira, " +
         "è ancora al contrario: al terzo tentativo la fisica quantistica si arrende e il connettore entra.", // 25
@@ -162,7 +164,7 @@
       nome: "Pendolo di alluminio riciclato",
       sotto: "Per assoggettare i robot con la sola forza dell'ipnosi. Forse.",
       prezzo: 1490,
-      img: "accessorio",
+      img: "pendolo",
       descrizione:
         "Ispirato al metodo del paragnosta Juke Ashkas Hellà, che nella puntata più iconica di Computation Island " +
         "alterò le sorti della partita ipnotizzando il concorrente Andro. Da estrarre dal taschino al momento giusto.", // 68
