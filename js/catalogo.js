@@ -1,15 +1,15 @@
 (function () {
-  // Immagini: logo dal retro di copertina, Hector dai fogli "HectorCinema" e "Hector FinalOK".
+  // Immagini: logo dal retro di copertina, foto prodotto dell'autore, features in SVG di esempio.
   var IMG = {
     logo: "assets/logo-emblema.webp",
-    fronte: "assets/hector-fronte.jpg",
-    retro: "assets/hector-retro.jpg",
-    primo: "assets/hector-primo-piano.jpg",
     studioFronte: "assets/studio-fronte.jpg",
-    studioRetro: "assets/studio-retro.jpg",
-    studioPrimo: "assets/studio-primo-piano.jpg",
-    studioProfilo: "assets/studio-profilo.jpg",
-    mk2: "assets/kostunbott-mk2.jpg",
+    kk2: "assets/kk2-sgnafurz.jpg",
+    kk3Raw: "assets/kk3-raw.jpg",
+    kk3Urban: "assets/kk3-urban.jpg",
+    featAntiborseggio: "assets/feature-antiborseggio.svg",
+    featTergicristallo: "assets/feature-tergicristallo.svg",
+    featSottovuoto: "assets/feature-sottovuoto.svg",
+    featRifrazione: "assets/feature-rifrazione.svg",
     pearArancio: "assets/pearwatch-arancio.jpg",
     pearGrigio: "assets/pearwatch-grigio.jpg",
     pearScheda: "assets/pearwatch-scheda.jpg",
@@ -26,8 +26,9 @@
   // Testi basati sul manoscritto; il numero tra parentesi nei commenti è il POST.
   var PRODOTTI = [
     {
-      id: "mk1-disappunto",
-      nome: "Kostunbott Mk I «Disappunto»",
+      id: "kk1-disappunto",
+      categoria: "giubbotto",
+      nome: "Kostunbott KK1 «Disappunto»",
       sotto: "Il premio del Torneo Mondiale di Disappunto. Non si compra: si vince.",
       prezzo: 72000,
       prezzoBarrato: 144000,
@@ -41,7 +42,8 @@
         "Innumerevoli e insondabili tasche", // 30, 66
         "Toppa dorsale sbiadita «Nosce te ipsum, baby!», da leggere come manifesto esistenziale", // 30
         "Taschino per pendolo di alluminio riciclato", // 41, 68
-        "Profumo di serie: silicio caldo ed elettronica stanca; in situazioni di tensione, cuoio e panico" // 30, 33
+        "Profumo di serie: silicio caldo ed elettronica stanca; in situazioni di tensione, cuoio e panico", // 30, 33
+        "Tutte le features di serie: Antiborseggio, Tergicristallo, Sottovuoto e Rifrazione 50%"
       ],
       recensioni: [
         { autore: "H. Starborne, tecnico dell'Help Desk", stelle: 5, testo: "Ne esiste uno solo e ce l'ho io. Il sopracciglio è rimasto in posizione da gara." },
@@ -49,15 +51,81 @@
       ]
     },
     {
-      id: "mk2-antiborseggio",
-      nome: "Kostunbott Mk II Antiborseggio",
+      id: "kk2-sgnafurz",
+      categoria: "giubbotto",
+      nome: "Kostunbott KK2 «Pelle di Sgnafürz sintetica»",
+      sotto: "La pelle dei sedili delle fuoriserie di lusso. Nessuno Sgnafürz è stato contrariato.",
+      prezzo: 58000,
+      img: "kk2",
+      descrizione:
+        "Rivestito nella stessa pelle di Sgnafürz sintetica dei sedili delle fuoriserie e delle console di bordo più esclusive. " + // 33, 50, 55
+        "Gli Sgnafürz veri vivono su Aleph, dove il cielo cambia colore a seconda del loro umore: abbiamo preferito non disturbarli.", // 4
+      specifiche: [
+        "Pelle di Sgnafürz sintetica, la stessa delle fuoriserie con il frigobar che non fa domande indiscrete", // 33
+        "Emblema Kostunbott ricamato sul petto",
+        "Bordature chiare su spalle e colletto",
+        "Innumerevoli e insondabili tasche",
+        "Predisposto per tutte le features"
+      ],
+      recensioni: [
+        { autore: "Passeggera, programma fedeltà Bronze Minus", stelle: 4, testo: "Profuma di fuoriserie. Il frigobar non è incluso, ho controllato tutte le tasche." }
+      ]
+    },
+    {
+      id: "kk3-raw",
+      categoria: "giubbotto",
+      nome: "Kostunbott KK3 Raw",
+      sotto: "Pelle grezza effetto vissuto. Sembra appena uscito da una rete di contenimento espulsioni.",
+      prezzo: 64000,
+      img: "kk3Raw",
+      descrizione:
+        "La versione per chi atterra spesso e male. Pelle Terraxiana grezza, segnata come se fosse appena stata recuperata da una rete di contenimento espulsioni " + // 7
+        "insieme all'attrezzatura sparsa e a qualche idea confusa.",
+      specifiche: [
+        "Pelle Terraxiana grezza con finitura effetto vissuto: ogni graffio ha una storia",
+        "Toppe ricamate su entrambe le maniche",
+        "Targhetta nominativa sul petto (nome a scelta, ortografia non garantita)",
+        "Polsini regolabili a strappo",
+        "Predisposto per tutte le features"
+      ],
+      recensioni: [
+        { autore: "H. Stavropk (sic)", stelle: 3, testo: "Bellissimo. Sulla targhetta però c'è scritto un nome che non è il mio." }
+      ]
+    },
+    {
+      id: "kk3-urban",
+      categoria: "giubbotto",
+      nome: "Kostunbott KK3 Urban",
+      sotto: "Pelle lucidata color tabacco e bande riflettenti, per i corridoi bui degli ipermercati.",
+      prezzo: 66000,
+      img: "kk3Urban",
+      descrizione:
+        "La versione da città: pelle lucidata color tabacco e bande riflettenti, pensata per farsi notare nei corridoi di servizio di Aris IV " + // 31
+        "e per non farsi travolgere dai carrelli in corsa.",
+      specifiche: [
+        "Pelle lucidata color tabacco",
+        "Bande riflettenti su spalle, tasche e polsi",
+        "Toppa ricamata sulla manica",
+        "Targhetta nominativa ricamata (questa volta scritta giusta)",
+        "Predisposto per tutte le features"
+      ],
+      recensioni: [
+        { autore: "Addetto alle termocamere, Aris IV", stelle: 5, testo: "Finalmente un fuggitivo che si vede bene anche al buio." }
+      ]
+    },
+    {
+      id: "feature-antiborseggio",
+      categoria: "feature",
+      tagliaUnica: true,
+      nome: "Feature Antiborseggio",
       sotto: "Il tessuto diventa rigido come il titanio. Il borseggiatore deruba se stesso.",
-      prezzo: 48500,
-      img: "mk2",
+      prezzo: 18500,
+      img: "featAntiborseggio",
       descrizione:
         "Sensori di prossimità che curvano lo spazio locale: la mano del borseggiatore finisce nella tasca del borseggiatore. " +
         "Collaudato tra i bazar fluttuanti di Malaffare: quarantotto tentativi sventati in cinquanta metri, mentre il cliente ammirava le lanterne.", // 41
       specifiche: [
+        "Installabile su KK2 e KK3 (montaggio a cura del cliente, di solito al terzo tentativo)",
         "Tessuto a irrigidimento istantaneo, classe titanio",
         "Micro-scariche elettrostatiche repellenti",
         "Ologrammi di formiche carnivore proiettati sulle dita indiscrete",
@@ -69,15 +137,18 @@
       ]
     },
     {
-      id: "protocollo-tergicristallo",
-      nome: "Kostunbott Protocollo Tergicristallo",
+      id: "feature-tergicristallo",
+      categoria: "feature",
+      tagliaUnica: true,
+      nome: "Feature Protocollo Tergicristallo",
       sotto: "Con l'umidità spuntano due spazzole sulle spalle. Ritmo a terzina.",
-      prezzo: 39900,
-      img: "studioRetro",
+      prezzo: 9900,
+      img: "featTergicristallo",
       descrizione:
         "Pensato per le nebbie giallognole di Malaffare: al primo accenno di umidità il capo attiva il Protocollo Tergicristallo " +
         "e due piccole spazzole meccaniche iniziano a lavorare sulle spalle, a ritmo di terzina.", // 47
       specifiche: [
+        "Installabile su KK2 e KK3 (montaggio a cura del cliente, di solito al terzo tentativo)",
         "Due spazzole meccaniche a scomparsa sulle spalle",
         "Cadenza a terzina, non modificabile (abbiamo provato)",
         "Spalla idrorepellente, adatta anche ad abbracci liberatori", // 69
@@ -88,16 +159,18 @@
       ]
     },
     {
-      id: "sottovuoto",
-      nome: "Kostunbott Sottovuoto",
+      id: "feature-sottovuoto",
+      categoria: "feature",
+      tagliaUnica: true,
+      nome: "Feature Sottovuoto",
       sotto: "Si riduce a un volume minimo. Si riespande con la parola chiave.",
-      prezzo: 52000,
-      img: "studioProfilo",
-      effetto: "sottovuoto",
+      prezzo: 14000,
+      img: "featSottovuoto",
       descrizione:
         "Grazie al sistema autosottovuotante integrato il capo assume un volume ridottissimo: un vero prodigio di occultamento, " +
         "collaudato nello scarico di una cabina di lusso. Il ritorno al volume originale avviene con un «pop» idraulico.", // 23
       specifiche: [
+        "Installabile su KK2 e KK3 (montaggio a cura del cliente, di solito al terzo tentativo)",
         "Sistema autosottovuotante integrato",
         "Riespansione a parola chiave, che per ragioni di sicurezza non viene comunicata per iscritto",
         "Valvola di scarico dal fischio simile a un merlo stonato", // 31
@@ -108,16 +181,18 @@
       ]
     },
     {
-      id: "rifrazione-50",
-      nome: "Kostunbott Rifrazione 50%",
+      id: "feature-rifrazione",
+      categoria: "feature",
+      tagliaUnica: true,
+      nome: "Feature Rifrazione 50%",
       sotto: "Invisibile al 50%. Si consiglia di non inciampare nell'altra metà.",
-      prezzo: 61000,
-      img: "fronte",
-      effetto: "rifrazione",
+      prezzo: 21000,
+      img: "featRifrazione",
       descrizione:
         "Per chi ha bisogno di sparire a metà. L'efficacia è dichiarata al 50%: la metà invisibile del capo resta comunque presente, " +
         "e ci si inciampa con facilità.", // 37
       specifiche: [
+        "Installabile su KK2 e KK3 (montaggio a cura del cliente, di solito al terzo tentativo)",
         "Rifrazione selettiva al 50%, cifra tonda per correttezza commerciale",
         "Metà visibile garantita",
         "Non si applica ai sensori olfattivi",
@@ -149,7 +224,7 @@
         "Icona di «Pericolo Imminente» a forma di teschio che sorride in modo inquietante", // 35
         "Ricezione dati con uno swish del dito", // 46
         "Lettore musicale con sitar elettronico di serie", // 50
-        "Protetto dai borseggi se indossato con un Kostunbott Mk II" // 41
+        "Protetto dai borseggi se indossato con un Kostunbott dotato di feature Antiborseggio" // 41
       ],
       recensioni: [
         { autore: "Ragazzino di 6 anni, Malaffare", stelle: 2, testo: "Ho provato a prenderlo dal polso di un tizio. Il suo giubbotto non era d'accordo." },
@@ -344,6 +419,7 @@
   window.KB.el = el;
   window.KB.immagine = immagine;
   window.KB.scelte = scelte;
+  window.KB.categoria = function (p) { return p.categoria || "accessorio"; };
   window.KB.chiaveImg = chiaveImg;
   window.KB.card = card;
 })();

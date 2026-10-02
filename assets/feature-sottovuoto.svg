@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="Feature Sottovuoto: il giubbotto compresso in un piccolo pacchetto, con il pop della riespansione (immagine di esempio)">
+  <defs>
+    <linearGradient id="pelle" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3a332c"/>
+      <stop offset="0.5" stop-color="#211d1a"/>
+      <stop offset="1" stop-color="#2d2722"/>
+    </linearGradient>
+    <linearGradient id="bronzo" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e3b581"/>
+      <stop offset="1" stop-color="#8f5f33"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(20 20) scale(.9)" opacity=".18">
+    <path d="M128 92 L170 60 Q200 82 230 60 L272 92 L344 140 L364 332 L312 342 L302 462 L98 462 L88 342 L36 332 L56 140 Z" fill="url(#pelle)" stroke="#c08a4d" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M170 60 Q200 104 230 60 L248 76 Q200 136 152 76 Z" fill="#2a2420" stroke="#c08a4d" stroke-width="2"/>
+    <line x1="200" y1="112" x2="200" y2="462" stroke="#e3b581" stroke-width="2.5" stroke-dasharray="6 5"/>
+    <rect x="116" y="300" width="64" height="54" rx="6" fill="none" stroke="#c08a4d" stroke-width="2.5"/>
+    <rect x="220" y="300" width="64" height="54" rx="6" fill="none" stroke="#c08a4d" stroke-width="2.5"/>
+    <path d="M232 196 l18 -18 l18 18 l-18 18 Z M241 196 l9 -9 l9 9 l-9 9 Z" fill="none" stroke="#e3b581" stroke-width="2"/>
+  </g>
+  <g fill="none" stroke="#e3b581" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M80 110 L150 180 M150 180 v-26 M150 180 h-26"/>
+    <path d="M320 110 L250 180 M250 180 v-26 M250 180 h26"/>
+    <path d="M80 400 L150 330 M150 330 v26 M150 330 h-26"/>
+    <path d="M320 400 L250 330 M250 330 v26 M250 330 h26"/>
+  </g>
+  <g transform="translate(200 256)">
+    <rect x="-46" y="-34" width="92" height="68" rx="12" fill="url(#pelle)" stroke="#c08a4d" stroke-width="3"/>
+    <path d="M-46 -6 Q0 10 46 -6 M-30 -34 Q-24 0 -30 34 M30 -34 Q24 0 30 34" fill="none" stroke="#c08a4d" stroke-opacity=".5" stroke-width="2"/>
+    <circle cx="0" cy="0" r="10" fill="url(#bronzo)" stroke="#3a2614" stroke-width="1.5"/>
+    <path d="M-4 0 h8 M0 -4 v8" stroke="#3a2614" stroke-width="2"/>
+  </g>
+  <text x="300" y="250" font-family="'Bahnschrift SemiCondensed','Roboto Condensed','Arial Narrow',sans-serif" font-weight="700" font-size="34" fill="#ff2e93" transform="rotate(-12 300 250)">pop!</text>
+  <text x="200" y="486" text-anchor="middle" font-family="ui-monospace,Menlo,Consolas,'Liberation Mono',monospace" font-size="12" letter-spacing="3" fill="#9aa0a6">RIESPANSIONE A PAROLA CHIAVE</text>
+</svg>

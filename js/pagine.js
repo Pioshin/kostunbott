@@ -11,9 +11,10 @@
 
   /* ---------- collezione ---------- */
   function home() {
-    var g = document.getElementById("griglia");
-    if (!g) return;
-    KB.PRODOTTI.forEach(function (p) { g.appendChild(KB.card(p)); });
+    document.querySelectorAll("[data-categoria]").forEach(function (g) {
+      var cat = g.getAttribute("data-categoria");
+      KB.PRODOTTI.forEach(function (p) { if (KB.categoria(p) === cat) g.appendChild(KB.card(p)); });
+    });
     var saldi = document.getElementById("saldi");
     if (saldi) saldi.addEventListener("click", function () {
       KB.toast("Saldi di domani applicati ai prezzi di ieri. Tornate ieri.");

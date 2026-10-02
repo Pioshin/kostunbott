@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="Feature Protocollo Tergicristallo: due spazzole sulle spalle sotto la pioggia, ritmo a terzina (immagine di esempio)">
+  <defs>
+    <linearGradient id="pelle" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3a332c"/>
+      <stop offset="0.5" stop-color="#211d1a"/>
+      <stop offset="1" stop-color="#2d2722"/>
+    </linearGradient>
+    <linearGradient id="bronzo" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e3b581"/>
+      <stop offset="1" stop-color="#8f5f33"/>
+    </linearGradient>
+  </defs>
+  <g stroke="#7fb3d5" stroke-opacity=".6" stroke-width="2" stroke-linecap="round"><path d="M60 40 l-4 12" /><path d="M110 70 l-4 12" /><path d="M160 30 l-4 12" /><path d="M250 50 l-4 12" /><path d="M300 80 l-4 12" /><path d="M350 36 l-4 12" /><path d="M80 120 l-4 12" /><path d="M330 140 l-4 12" /><path d="M210 20 l-4 12" /><path d="M40 180 l-4 12" /><path d="M370 200 l-4 12" /></g>
+  <g transform="translate(40 40) scale(.8)" opacity="1">
+    <path d="M128 92 L170 60 Q200 82 230 60 L272 92 L344 140 L364 332 L312 342 L302 462 L98 462 L88 342 L36 332 L56 140 Z" fill="url(#pelle)" stroke="#c08a4d" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M170 60 Q200 104 230 60 L248 76 Q200 136 152 76 Z" fill="#2a2420" stroke="#c08a4d" stroke-width="2"/>
+    <line x1="200" y1="112" x2="200" y2="462" stroke="#e3b581" stroke-width="2.5" stroke-dasharray="6 5"/>
+    <rect x="116" y="300" width="64" height="54" rx="6" fill="none" stroke="#c08a4d" stroke-width="2.5"/>
+    <rect x="220" y="300" width="64" height="54" rx="6" fill="none" stroke="#c08a4d" stroke-width="2.5"/>
+    <path d="M232 196 l18 -18 l18 18 l-18 18 Z M241 196 l9 -9 l9 9 l-9 9 Z" fill="none" stroke="#e3b581" stroke-width="2"/>
+    <g stroke="#e3b581" stroke-width="4" stroke-linecap="round" fill="none">
+      <path d="M96 128 L64 70"/>
+      <path d="M304 128 L336 70"/>
+    </g>
+    <g stroke="#e3b581" stroke-opacity=".35" stroke-width="3" fill="none" stroke-dasharray="3 6">
+      <path d="M96 128 m-56 -10 a60 60 0 0 1 70 -56"/>
+      <path d="M304 128 m56 -10 a60 60 0 0 0 -70 -56"/>
+    </g>
+    <circle cx="96" cy="128" r="7" fill="url(#bronzo)"/>
+    <circle cx="304" cy="128" r="7" fill="url(#bronzo)"/>
+  </g>
+  <g fill="#ff2e93" stroke="#ff2e93" stroke-width="2.5">
+    <ellipse cx="170" cy="446" rx="7" ry="5"/><ellipse cx="200" cy="446" rx="7" ry="5"/><ellipse cx="230" cy="446" rx="7" ry="5"/>
+    <path d="M176 446 V414 M206 446 V414 M236 446 V414 M176 414 H236" fill="none"/>
+  </g>
+  <path d="M168 404 q32 -14 70 0" fill="none" stroke="#ff2e93" stroke-width="1.5"/>
+  <text x="203" y="400" text-anchor="middle" font-family="ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#ff2e93">3</text>
+  <text x="200" y="486" text-anchor="middle" font-family="ui-monospace,Menlo,Consolas,'Liberation Mono',monospace" font-size="12" letter-spacing="3" fill="#9aa0a6">RITMO A TERZINA · NON MODIFICABILE</text>
+</svg>

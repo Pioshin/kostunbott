@@ -4,6 +4,7 @@
 
   var NAV = [
     ["index.html", "Collezione"],
+    ["index.html#features", "Features"],
     ["torneo.html", "Il Torneo"],
     ["assistenza.html", "Assistenza"]
   ];

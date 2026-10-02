@@ -7,7 +7,7 @@
       var g = localStorage.getItem(CHIAVE);
       if (g) {
         var v = JSON.parse(g);
-        if (Array.isArray(v)) return v;
+        if (Array.isArray(v)) return v.filter(function (r) { return window.KB.trova(r.id); });
       }
     } catch (e) {
       return inMemoria;
