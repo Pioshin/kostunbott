@@ -1,5 +1,5 @@
 (function () {
-  // Immagini: logo dal retro di copertina, foto prodotto dell'autore, features in SVG di esempio.
+  // Immagini: logo e circuiti dal retro di copertina, foto prodotto dell'autore, features in SVG provvisori.
   var IMG = {
     logo: "assets/logo-emblema.webp",
     studioFronte: "assets/studio-fronte.jpg",
@@ -18,7 +18,10 @@
     fondina: "assets/fondina-nexus.jpg",
     cavetto: "assets/cavetto.jpg",
     pendolo: "assets/pendolo.jpg",
-    maglietta: "assets/maglietta.jpg"
+    maglietta: "assets/maglietta.jpg",
+    toppaCis: "assets/toppa-cis.jpg",
+    toppaRetro: "assets/toppa-posteriore.jpg",
+    toppaScritta: "assets/toppa-nosce-scritta.jpg"
   };
 
   var TAGLIE = ["Umanide S", "Umanide M", "Umanide L", "Spaziale", "Spaziale rotto"];
@@ -303,13 +306,57 @@
         "a occhi chiusi indicando la propria schiena.",
       specifiche: [
         "Emblema Kostunbott sul petto",
-        "Sulla schiena «Nosce te ipsum, baby!» e il circuito del retro di copertina",
+        "Sulla schiena «Nosce te ipsum, baby!» e il circuito ricamato",
         "Cotone certificato da un ente che nessuno ha mai visto",
         "Lavabile a 36.535 gradi (consigliamo di non verificare)",
         "Non contiene tasche: è un limite, lo sappiamo"
       ],
       recensioni: [
-        { autore: "Lettore, Sabedì mattina", stelle: 5, testo: "L'ho indossata e mi sono conosciuto. Non so se ne sono felice." }
+        { autore: "Umanide di Terrax, Sabedì mattina", stelle: 5, testo: "L'ho indossata e mi sono conosciuto. Non so se ne sono felice." }
+      ]
+    },
+    {
+      id: "toppa-nosce",
+      nome: "Toppa posteriore «Nosce te ipsum, baby!»",
+      sotto: "La toppa dorsale del Kostunbott, da applicare su qualunque giacca.",
+      prezzo: 2900,
+      img: "toppaRetro",
+      etichettaVarianti: "Versione",
+      varianti: [
+        { nome: "Con circuito", img: "toppaRetro" },
+        { nome: "Solo scritta", img: "toppaScritta" }
+      ],
+      descrizione:
+        "Per chi vuole il manifesto esistenziale senza il giubbotto. È la stessa toppa che sulla schiena di un Kostunbott sembra la cosa più seria del mondo " + // 30
+        "e che qualcuno ha indicato urlando «KNOW THY SELF!» a occhi chiusi.", // 50
+      specifiche: [
+        "Due versioni: con il circuito ricamato, oppure tattica con la sola scritta",
+        "Bordo cucito in filo bronzo",
+        "Da cucire o termoapplicare",
+        "Sbiaditura di fabbrica: sembra vissuta dal primo giorno" // 30
+      ],
+      recensioni: [
+        { autore: "Spaziale rotto, Domedì pomeriggio", stelle: 5, testo: "L'ho cucita sullo zaino. Ora lo zaino si conosce meglio di me." }
+      ]
+    },
+    {
+      id: "toppa-cis",
+      nome: "Toppa C.I.S. Galattica ricamata",
+      sotto: "L'emblema ricamato, per chi vuole solo quello.",
+      prezzo: 1900,
+      img: "toppaCis",
+      tagliaUnica: true,
+      descrizione:
+        "L'emblema C.I.S. che compare sulla manica dei Kostunbott KK3, venduto da solo per chi vuole applicarlo sui propri abiti. " +
+        "Pianeta, orbita, tre stelle e corona d'alloro, ricamati in bianco e grigio su fondo nero.",
+      specifiche: [
+        "Toppa circolare ricamata",
+        "Da cucire o termoapplicare",
+        "Compatibile con maniche, zaini, tute spaziali e cappelli di qualunque forma",
+        "Non conferisce alcun grado militare"
+      ],
+      recensioni: [
+        { autore: "Cliente verificato, Aris IV", stelle: 4, testo: "Messa sul giubbotto di mio cugino. Ora lo fermano ai controlli più di prima." }
       ]
     },
     {
@@ -371,7 +418,7 @@
 
   // Scelta offerta al cliente: colore per i prodotti con varianti, taglia per i capi, nessuna per gli accessori.
   function scelte(p) {
-    if (p.varianti) return { etichetta: "Colore", opzioni: p.varianti.map(function (v) { return v.nome; }) };
+    if (p.varianti) return { etichetta: p.etichettaVarianti || "Colore", opzioni: p.varianti.map(function (v) { return v.nome; }) };
     if (p.tagliaUnica) return null;
     return { etichetta: "Taglia", opzioni: TAGLIE };
   }
