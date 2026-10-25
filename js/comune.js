@@ -3,8 +3,8 @@
   var el = KB.el;
 
   var NAV = [
-    ["index.html", "Collezione"],
-    ["index.html#features", "Features"],
+    ["shop.html", "Collezione"],
+    ["shop.html#features", "Features"],
     ["torneo.html", "Il Torneo"],
     ["assistenza.html", "Assistenza"]
   ];
@@ -34,7 +34,7 @@
 
     var cont = el("div", "contenitore testata-int");
     var marchio = el("a", "marchio");
-    marchio.href = "index.html";
+    marchio.href = "shop.html";
     marchio.setAttribute("aria-label", "Kostunbott, pagina iniziale");
     var logo = el("img");
     logo.src = KB.IMG.logo;

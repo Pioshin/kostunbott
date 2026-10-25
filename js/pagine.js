@@ -40,7 +40,7 @@
         "Il prodotto richiesto è finito in una delle innumerevoli e insondabili tasche del Kostunbott. " +
         "Le tasche restituiscono gli oggetti in ordine non garantito, di solito il Giobedì successivo."));
       var torna = el("a", "btn", "Torna alla collezione");
-      torna.href = "index.html";
+      torna.href = "shop.html";
       box.appendChild(torna);
       host.appendChild(box);
       return;
@@ -170,7 +170,7 @@
         var v = el("div", "vuoto");
         v.appendChild(el("p", null, "Il carrello è vuoto, come le tasche dopo un acquisto Kostunbott."));
         var a = el("a", "btn", "Vai alla collezione");
-        a.href = "index.html";
+        a.href = "shop.html";
         v.appendChild(a);
         host.appendChild(v);
         return;
