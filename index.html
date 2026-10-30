@@ -108,7 +108,7 @@ Error generating stack: `+u.message+`
   <script>
   (function(){
     // Indirizzo del servizio che inoltra la richiesta all'autore: l'email di destinazione non compare nella pagina.
-    var INVIO = "";
+    var INVIO = "https://formsubmit.co/ajax/d69aea3635d39ed253f3a8d9b73b5bf4";
     var modale = document.getElementById("pm-modale"), form = document.getElementById("pm-form"), esito = document.getElementById("pm-esito"), apri = document.getElementById("pro-max");
     function mostra(si){ modale.classList.toggle("aperta", si); modale.setAttribute("aria-hidden", si ? "false" : "true"); if (si) form.elements.nome.focus(); else apri.focus(); }
     function scrivi(testo, tipo){ esito.textContent = testo; esito.className = "pm-esito" + (tipo ? " " + tipo : ""); }
