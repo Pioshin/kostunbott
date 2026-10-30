@@ -51,7 +51,94 @@ Error generating stack: `+u.message+`
 </script>
   <script>(function(){function m(a){var h=a.getAttribute("href");if(!h)return;try{var u=new URL(h,document.baseURI);if((u.protocol==="http:"||u.protocol==="https:")&&u.host!==location.host){a.target="_blank";a.rel="noopener noreferrer";}}catch(e){}}function s(){document.querySelectorAll("a[href]").forEach(m);}if(document.readyState!=="loading"){s();}else{document.addEventListener("DOMContentLoaded",s);}document.addEventListener("click",function(e){var a=e.target&&e.target.closest&&e.target.closest("a[href]");if(a){m(a);}},true);})();</script>
   <script type="application/json" data-clippy-inline-media-manifest="1">{"version":1,"slots":[]}</script>
-  <a id="ordina-ora" href="https://amzn.eu/d/0a1P1SR0" target="_blank" rel="noopener noreferrer" style="position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:1000;padding:14px 34px;font-family:'Orbitron',sans-serif;font-weight:900;font-size:16px;letter-spacing:0.3em;color:#000;background:#7efaff;border-radius:4px;box-shadow:0 0 24px rgba(0,240,255,0.7);text-decoration:none;white-space:nowrap">ORDINA ORA</a>
+  <style>
+    #ordina-ora,#pro-max{position:fixed;bottom:24px;z-index:1000;padding:14px 30px;font-family:'Orbitron',sans-serif;font-weight:900;font-size:16px;letter-spacing:0.3em;border-radius:4px;text-decoration:none;white-space:nowrap;cursor:pointer;border:0}
+    #ordina-ora{left:24px;color:#000;background:#7efaff;box-shadow:0 0 24px rgba(0,240,255,0.7)}
+    #pro-max{right:24px;color:#fff;background:#ff1f6e;box-shadow:0 0 24px rgba(255,31,110,0.8);animation:pro-max-lampeggia 1.1s steps(1,end) infinite}
+    @keyframes pro-max-lampeggia{0%{background:#ff1f6e;box-shadow:0 0 28px rgba(255,31,110,0.9)}50%{background:#7a0a33;box-shadow:0 0 6px rgba(255,31,110,0.3)}}
+    @media (max-width:640px){#ordina-ora,#pro-max{bottom:16px;padding:12px 12px;font-size:11px;letter-spacing:0.12em}#ordina-ora{left:16px}#pro-max{right:16px}}
+    #pm-modale{position:fixed;inset:0;z-index:2000;display:none;align-items:center;justify-content:center;padding:16px;background:rgba(0,0,0,0.78);backdrop-filter:blur(4px)}
+    #pm-modale.aperta{display:flex}
+    .pm-scheda{position:relative;width:min(1040px,100%);max-height:calc(100vh - 32px);overflow:auto;border-radius:10px;border:1px solid rgba(255,31,110,0.45);box-shadow:0 0 60px rgba(255,31,110,0.35),0 20px 80px rgba(0,0,0,0.9);background:#12051c url(assets/pro-max-sfondo.jpg) center top/cover no-repeat;color:#fff;font-family:'Inter',system-ui,sans-serif}
+    .pm-velo{display:grid;grid-template-columns:1fr minmax(300px,380px);gap:24px;align-items:end;min-height:520px;padding:28px;background:linear-gradient(90deg,rgba(10,0,20,0.15) 0%,rgba(10,0,20,0.1) 45%,rgba(10,0,20,0.85) 72%)}
+    .pm-titolo{align-self:end;max-width:420px;padding:16px 18px;background:rgba(0,0,0,0.6);border-left:3px solid #ff1f6e;border-radius:4px}
+    .pm-titolo h2{margin:0;font-family:'Orbitron',sans-serif;font-weight:900;font-size:22px;letter-spacing:0.12em;color:#ff5c97;text-shadow:0 0 14px rgba(255,31,110,0.8)}
+    .pm-titolo p{margin:8px 0 0;font-size:14px;line-height:1.45;color:#f1e6f7}
+    .pm-prezzo{display:inline-flex;align-items:baseline;gap:10px;margin-top:12px}
+    .pm-prezzo strong{font-family:'Orbitron',sans-serif;font-size:30px;color:#7efaff;text-shadow:0 0 12px rgba(0,240,255,0.7)}
+    .pm-prezzo span{font-family:'Orbitron',sans-serif;font-size:11px;font-weight:900;letter-spacing:0.2em;padding:4px 8px;border-radius:3px;background:#ffd400;color:#000}
+    .pm-form{display:flex;flex-direction:column;gap:10px;padding:18px;background:rgba(8,0,16,0.82);border:1px solid rgba(255,255,255,0.12);border-radius:6px}
+    .pm-form label{display:flex;flex-direction:column;gap:4px;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#d9c6e6}
+    .pm-form input,.pm-form textarea{font:inherit;font-size:14px;font-weight:400;letter-spacing:normal;text-transform:none;color:#fff;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.22);border-radius:4px;padding:9px 10px;resize:vertical}
+    .pm-form input:focus,.pm-form textarea:focus{outline:2px solid #7efaff;outline-offset:1px}
+    .pm-form button[type=submit]{margin-top:4px;padding:13px;font-family:'Orbitron',sans-serif;font-weight:900;font-size:13px;letter-spacing:0.2em;color:#000;background:#7efaff;border:0;border-radius:4px;cursor:pointer;box-shadow:0 0 18px rgba(0,240,255,0.6)}
+    .pm-form button[disabled]{opacity:0.6;cursor:wait}
+    .pm-nota{margin:0;font-size:11px;line-height:1.4;color:#b9a8c6}
+    .pm-esito{margin:0;font-size:13px;line-height:1.4;min-height:1em}
+    .pm-esito.ok{color:#7efaff}.pm-esito.errore{color:#ff8fb5}
+    .pm-trappola{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+    .pm-chiudi{position:absolute;top:10px;right:10px;z-index:1;width:36px;height:36px;font-size:22px;line-height:1;color:#fff;background:rgba(0,0,0,0.6);border:1px solid rgba(255,255,255,0.3);border-radius:50%;cursor:pointer}
+    @media (max-width:760px){.pm-velo{grid-template-columns:1fr;min-height:0;padding:16px;padding-top:min(48vw,330px);background:linear-gradient(180deg,rgba(10,0,20,0) 0%,rgba(10,0,20,0.55) 40%,rgba(10,0,20,0.92) 62%)}.pm-scheda{background-size:auto min(100vw,660px);background-color:#12051c}.pm-titolo{max-width:none}}
+    @media (prefers-reduced-motion:reduce){#pro-max{animation-duration:2.4s}}
+  </style>
+  <a id="ordina-ora" href="https://www.gruppoalbatros.com/prodotti/galactic-powder-ephemera-angelo-raffaele-vita/" target="_blank" rel="noopener noreferrer">ORDINA ORA</a>
+  <button id="pro-max" type="button" aria-haspopup="dialog" aria-controls="pm-modale">VERSIONE 3D PRO MAX</button>
+  <div id="pm-modale" role="dialog" aria-modal="true" aria-labelledby="pm-titolo" aria-hidden="true">
+    <div class="pm-scheda">
+      <button class="pm-chiudi" type="button" aria-label="Chiudi">&times;</button>
+      <div class="pm-velo">
+        <div class="pm-titolo">
+          <h2 id="pm-titolo">VERSIONE 3D PRO MAX</h2>
+          <p>Edizione limitata autografata dall'autore, con la dedica che vuoi tu.</p>
+          <div class="pm-prezzo"><strong>15&nbsp;€</strong><span>BEST BUY</span></div>
+        </div>
+        <form class="pm-form" id="pm-form" novalidate>
+          <label>Nome<input name="nome" autocomplete="name" required maxlength="120"></label>
+          <label>Email per la risposta<input name="email" type="email" autocomplete="email" required maxlength="160"></label>
+          <label>Dedica<textarea name="dedica" rows="3" required maxlength="400" placeholder="A chi va la dedica e cosa vuoi che ci sia scritto"></textarea></label>
+          <label>Indirizzo di spedizione<textarea name="indirizzo" rows="3" autocomplete="street-address" required maxlength="400"></textarea></label>
+          <div class="pm-trappola" aria-hidden="true"><input name="_honey" tabindex="-1" autocomplete="off"></div>
+          <button type="submit">INVIA LA RICHIESTA</button>
+          <p class="pm-esito" id="pm-esito" role="status" aria-live="polite"></p>
+          <p class="pm-nota">Nessun pagamento qui: è una richiesta. L'autore ti risponde via email con conferma e modalità di pagamento.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script>
+  (function(){
+    // Indirizzo del servizio che inoltra la richiesta all'autore: l'email di destinazione non compare nella pagina.
+    var INVIO = "";
+    var modale = document.getElementById("pm-modale"), form = document.getElementById("pm-form"), esito = document.getElementById("pm-esito"), apri = document.getElementById("pro-max");
+    function mostra(si){ modale.classList.toggle("aperta", si); modale.setAttribute("aria-hidden", si ? "false" : "true"); if (si) form.elements.nome.focus(); else apri.focus(); }
+    function scrivi(testo, tipo){ esito.textContent = testo; esito.className = "pm-esito" + (tipo ? " " + tipo : ""); }
+    apri.addEventListener("click", function(){ mostra(true); });
+    modale.querySelector(".pm-chiudi").addEventListener("click", function(){ mostra(false); });
+    modale.addEventListener("click", function(e){ if (e.target === modale) mostra(false); });
+    document.addEventListener("keydown", function(e){ if (e.key === "Escape" && modale.classList.contains("aperta")) mostra(false); });
+    form.addEventListener("submit", function(e){
+      e.preventDefault();
+      if (!form.checkValidity()) { scrivi("Compila tutti i campi, con un'email valida.", "errore"); return; }
+      if (form.elements._honey.value) return;
+      if (!INVIO) { scrivi("Le richieste aprono a breve: riprova tra qualche giorno.", "errore"); return; }
+      var d = form.elements, bottone = form.querySelector("button[type=submit]");
+      bottone.disabled = true; scrivi("Invio in corso…");
+      fetch(INVIO, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify({
+          _subject: "Richiesta 3D PRO MAX autografata — " + d.nome.value.trim(),
+          _template: "table", _captcha: "false",
+          nome: d.nome.value.trim(), email: d.email.value.trim(),
+          dedica: d.dedica.value.trim(), indirizzo: d.indirizzo.value.trim(), prezzo: "15 €"
+        })
+      }).then(function(r){ return r.json().then(function(j){ if (!r.ok || String(j.success) !== "true") throw new Error(); }); })
+        .then(function(){ form.reset(); scrivi("Richiesta inviata! Riceverai una risposta via email.", "ok"); })
+        .catch(function(){ scrivi("Invio non riuscito. Riprova tra poco.", "errore"); })
+        .then(function(){ bottone.disabled = false; });
+    });
+  })();
+  </script>
   <style>@keyframes se-non-lo-sai{0%{transform:translateX(100vw);animation-timing-function:ease-out}25%{transform:translateX(calc(50vw - 50%))}41.667%{transform:translateX(calc(50vw - 50%));animation-timing-function:ease-in}66.667%{transform:translateX(-100%)}100%{transform:translateX(-100%)}}#se-non-lo-sai{position:fixed;top:14px;left:0;z-index:1001;white-space:nowrap;font-family:'Orbitron',sans-serif;font-weight:900;font-size:18px;letter-spacing:0.25em;color:#7efaff;text-shadow:0 0 12px rgba(0,240,255,0.8);text-decoration:none;cursor:pointer;animation:se-non-lo-sai 6s linear infinite}</style>
   <a id="se-non-lo-sai" href="shop.html">SE NON LO SAI, FALLO!</a>
 </body>
